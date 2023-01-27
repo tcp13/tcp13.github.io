@@ -85,10 +85,9 @@ $("#sitePrompt button").click(function(){
     }
 	}
 
-  $.get("https://site-audit-b3hxntgzxa-uk.a.run.app/?url=" + url, function(data, statusText){
-
-  })
+  $.get("https://site-audit-b3hxntgzxa-uk.a.run.app/?url=" + url)
   .done(function(data) {
+    doneLoading();
     displayResults(data);
     console.log(data);
   })
