@@ -61,7 +61,7 @@ $("#sitePrompt button").click(function(){
   $("#status h1").text("Loading...");
   $("#status").fadeIn(2000);
   
-  var url = $("#sitePrompt input").val().replace("https://", "").replace("http://", "").replace("www.", "");
+  var url = $("#sitePrompt input").val().replace("https://", "").replace("http://", "").replace("www.", "").split("/")[0];
 
 	var loading1 = setTimeout(displayLoading, 5000, "Scanning website... hang tight!", false);
 	var loading2 = setTimeout(displayLoading, 15000, "Still loading...", false);
