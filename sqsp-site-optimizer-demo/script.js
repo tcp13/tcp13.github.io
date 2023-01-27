@@ -91,15 +91,15 @@ $("#sitePrompt button").click(function(){
     displayResults(data);
     console.log(data);
   })
-  .fail(function(jqXHR) {
+  .fail(function(jqXHR, textStatus, errorThrown) {
     clearTimeouts();
     $(".spinner").hide();
-    if(jqXHR.statusText == "400"){
-      $("#status h1").text("[" + jqXHR.statusText + "] Hmm, I couldn't find a Squarespace website at that URL. Please try again.");
-    }
-    else{
-      $("#status h1").text("[" + jqXHR.statusText + "] Hmm, something went wrong. Please try again later.");
-    }
+
+    console.log(jqXHR);
+    console.log(textStatus);
+    console.log(errorThrown);
+
+    $("#status h1").text("[" + textStatus + "] Hmm, I couldn't find a Squarespace website at that URL. Please try again.");
     
   });
 });
