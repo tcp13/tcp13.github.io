@@ -104,10 +104,20 @@ body{
         body{
             margin:4% 12%;
         }
+        header.fixed{
+            padding: 0px 12%;
+        }
     }
     @media only screen and (max-width: 1000px) {
         body{
             margin:4%;
+            margin-top: 14rem;
+        }
+        header.fixed{
+            padding: 0px 4%;
+        }
+        header.fixed h1, #reportOptions{
+            float: none;
         }
     }
     @media only screen and (max-width: 600px){
