@@ -61,7 +61,7 @@ $("#sitePrompt button").click(function(){
   $("#status h1").text("Loading...");
   $("#status").fadeIn(2000);
   
-  var url = new URL($("#sitePrompt input").val()).host;
+  var url = $("#sitePrompt input").val().replace("https://", "").replace("http://", "").replace("www.", "");
 
 	var loading1 = setTimeout(displayLoading, 5000, "Scanning website... hang tight!", false);
 	var loading2 = setTimeout(displayLoading, 15000, "Still loading...", false);
@@ -264,14 +264,20 @@ function displayResults(message){
         appendResults("pass", results = {
           tags: ["brand"],
           title: "Site uses a custom favicon.",
-          desc: "Lorem ipsum dolor sit amet. This is placeholder text that will explain more details.<a href='https://support.squarespace.com/hc/en-us/articles/206542527-Adding-a-favicon-or-browser-icon' target='_blank'>View Squarespace's Help Guide</a>"
+          desc: "A favicon is a small icon displayed by web browsers next to the page title.<a href='https://support.squarespace.com/hc/en-us/articles/206542527-Adding-a-favicon-or-browser-icon' target='_blank'>View Squarespace's Help Guide</a>"
         });
       }
       else if(message.content.customFavicon == false){
+        if(message.metadata.version == "7.0"){
+          let instructions = "A favicon can be added to this website from Design ➜ Logo & Title ➜ Browser Icon. Squarespace recommends using a 200x200 .png file no larger than 100 KB."
+        }
+        else if(message.metadata.version == "7.0"){
+          let instructions = "A favicon can be added to this website from Design ➜ Browser Icon. Squarespace recommends using a 200x200 .png file no larger than 100 KB."
+        }
         appendResults("fail", results = {
           tags: ["brand"],
           title: "Add a custom favicon.",
-          desc: "Lorem ipsum dolor sit amet. This is placeholder text that will explain the suggestion and link to an official Squarespace Help Center guide for more details."
+          desc: "A favicon is a small icon displayed by web browsers next to the page title. " + instructions
         });
       }
     }
