@@ -688,8 +688,7 @@ function displayResults(message){
         appendResults("pass", results = {
           tags: ["legal", "commerce"],
           title: "Commerce checkout includes terms and policies.",
-          desc: "For ecommerce websites, policy links can be displayed on the checkout page.",
-          guide: "https://support.squarespace.com/hc/en-us/articles/360002111987#toc-checkout-settings:~:text=Add%20and%20format%20these%20policies"
+          desc: "For ecommerce websites, policy links can be displayed on the checkout page." + formatGuide("https://support.squarespace.com/hc/en-us/articles/360002111987#toc-checkout-settings:~:text=Add%20and%20format%20these%20policies")
         });
       }
       else{
@@ -706,8 +705,7 @@ function displayResults(message){
         appendResults("fail", results = {
           tags: ["legal", "commerce"],
           title: "Add terms and policies to commerce checkout.",
-          desc: "For ecommerce websites, policy links can be displayed on the checkout page. The following are missing from this website's checkout:<ul>" + checkoutPolicies + "</ul>",
-          guide: "https://support.squarespace.com/hc/en-us/articles/360002111987#toc-checkout-settings:~:text=Add%20and%20format%20these%20policies"
+          desc: "For ecommerce websites, policy links can be displayed on the checkout page. The following are missing from this website's checkout:<ul>" + checkoutPolicies + "</ul>" + formatGuide("https://support.squarespace.com/hc/en-us/articles/360002111987#toc-checkout-settings:~:text=Add%20and%20format%20these%20policies")
         });
       }
     }
