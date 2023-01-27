@@ -68,8 +68,7 @@ $("#sitePrompt button").click(function(){
 	var loading3 = setTimeout(displayLoading, 40000, "Hmm, this is taking longer than expected...", false);
   var timeout = setTimeout(displayLoading, 65000, "[Timeout] Hmm, something went wrong. Please try again later.", true);
 
-  function doneLoading(){
-    $("#status").hide();
+  function clearTimeouts(){
     clearTimeout(loading1);
     clearTimeout(loading2);
     clearTimeout(loading3);
@@ -87,12 +86,14 @@ $("#sitePrompt button").click(function(){
 
   $.get("https://site-audit-b3hxntgzxa-uk.a.run.app/?url=" + url)
   .done(function(data) {
-    doneLoading();
+    clearTimeout();
+    $("#status").hide();
     displayResults(data);
     console.log(data);
   })
   .fail(function(jqXHR) {
-    doneLoading();
+    clearTimeouts();
+    $(".spinner").hide();
     $("#status h1").text("[" + jqXHR.statusText + "] Hmm, something went wrong. Please try again later.");
   });
 });
