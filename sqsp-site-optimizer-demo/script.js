@@ -264,8 +264,7 @@ function displayResults(message){
         appendResults("pass", results = {
           tags: ["brand"],
           title: "Site uses a custom favicon.",
-          desc: "A favicon is a small icon displayed by web browsers next to the page title.",
-          guide: "https://support.squarespace.com/hc/en-us/articles/206542527-Adding-a-favicon-or-browser-icon"
+          desc: "A favicon is a small icon displayed by web browsers next to the page title. " + formatGuide("https://support.squarespace.com/hc/en-us/articles/206542527-Adding-a-favicon-or-browser-icon")
         });
       }
       else if(message.content.customFavicon == false){
@@ -278,8 +277,7 @@ function displayResults(message){
         appendResults("fail", results = {
           tags: ["brand"],
           title: "Add a custom favicon.",
-          desc: "A favicon is a small icon displayed by web browsers next to the page title. " + instructions,
-          guide: "https://support.squarespace.com/hc/en-us/articles/206542527-Adding-a-favicon-or-browser-icon"
+          desc: "A favicon is a small icon displayed by web browsers next to the page title. " + instructions + formatGuide("https://support.squarespace.com/hc/en-us/articles/206542527-Adding-a-favicon-or-browser-icon")
         });
       }
     }
@@ -290,16 +288,14 @@ function displayResults(message){
         appendResults("pass", results = {
           tags: ["settings"],
           title: "Squarespace badge is deactivated.",
-          desc: 'By default, most templates display a "Made with Squarespace" badge, which can be removed by editing the footer.',
-          guide: "https://support.squarespace.com/hc/en-us/articles/205815988-Removing-Made-with-Squarespace-from-your-site"
+          desc: 'By default, most templates display a "Made with Squarespace" badge, which can be removed by editing the footer.' + formatGuide("https://support.squarespace.com/hc/en-us/articles/205815988-Removing-Made-with-Squarespace-from-your-site")
         });
       }
       else if(message.content.badge == true){
         appendResults("fail", results = {
           tags: ["settings"],
           title: "Deactivate Squarespace badge.",
-          desc: 'By default, most templates display a "Made with Squarespace" badge, which can be removed by editing the footer.',
-          guide: "https://support.squarespace.com/hc/en-us/articles/205815988-Removing-Made-with-Squarespace-from-your-site"
+          desc: 'By default, most templates display a "Made with Squarespace" badge, which can be removed by editing the footer.' + formatGuide("https://support.squarespace.com/hc/en-us/articles/205815988-Removing-Made-with-Squarespace-from-your-site")
         });
       }
     }
@@ -310,16 +306,14 @@ function displayResults(message){
         appendResults("pass", results = {
           tags: ["seo", "speed", "settings"],
           title: "Site uses AMP for blog posts.",
-          desc: "Accelerated Mobile Pages (AMP) is a simplified format used to load blog posts more quickly on mobile devices.",
-          guide: "https://support.squarespace.com/hc/en-us/articles/223766868"
+          desc: "Accelerated Mobile Pages (AMP) is a simplified format used to load blog posts more quickly on mobile devices." + formatGuide("https://support.squarespace.com/hc/en-us/articles/223766868")
         });
       }
       else if(message.content.ampEnabled == false){
         appendResults("fail", results = {
           tags: ["seo", "speed", "settings"],
           title: "Enable AMP for blog posts.",
-          desc: "Accelerated Mobile Pages (AMP) is a simplified format used to load blog posts more quickly on mobile devices. AMP can be enabled for this website from Settings ➜ Blogging ➜ Accelerated Mobile Pages.",
-          guide: "https://support.squarespace.com/hc/en-us/articles/223766868"
+          desc: "Accelerated Mobile Pages (AMP) is a simplified format used to load blog posts more quickly on mobile devices. AMP can be enabled for this website from Settings ➜ Blogging ➜ Accelerated Mobile Pages." + formatGuide("https://support.squarespace.com/hc/en-us/articles/223766868")
         });
       }
     }
@@ -330,16 +324,14 @@ function displayResults(message){
         appendResults("pass", results = {
           tags: ["accessibility", "userinput", "settings"],
           title: "Escape key login is deactivated.",
-          desc: "Escape Key Login allows site owners to quickly switch to the back-end editor by pressing the escape key from the live website. While convenient for editing, this feature should be deactivated after launch to avoid major accessibility issues for screen reader users. This setting can be deactivated from Settings ➜ Advanced ➜ Escape Key.",
-          guide: "https://support.squarespace.com/hc/en-us/articles/205815858"
+          desc: "Escape Key Login allows site owners to quickly switch to the back-end editor by pressing the escape key from the live website. While convenient for editing, this feature should be deactivated after launch to avoid major accessibility issues for <a href='https://www.youtube.com/watch?v=q_ATY9gimOM' target='_blank'>screen reader users</a>. This setting can be deactivated from Settings ➜ Advanced ➜ Escape Key." + formatGuide("https://support.squarespace.com/hc/en-us/articles/205815858")
         });
       }
       else if(message.content.escapeLogin == true){
         appendResults("fail", results = {
           tags: ["accessibility", "userinput", "settings"],
           title: "Deactivate escape key login.",
-          desc: "Escape Key Login allows site owners to quickly switch to the back-end editor by pressing the escape key from the live website. While convenient for editing, this feature should be deactivated after launch to avoid major accessibility issues for screen reader users.",
-          guide: "https://support.squarespace.com/hc/en-us/articles/205815858"
+          desc: "Escape Key Login allows site owners to quickly switch to the back-end editor by pressing the escape key from the live website. While convenient for editing, this feature should be deactivated after launch to avoid major accessibility issues for <a href='https://www.youtube.com/watch?v=q_ATY9gimOM' target='_blank'>screen reader users</a>." + formatGuide("https://support.squarespace.com/hc/en-us/articles/205815858")
         });
       }
     }
@@ -368,16 +360,14 @@ function displayResults(message){
         appendResults("pass", results = {
           tags: ["security", "settings"],
           title: "Embedding by other websites is prohibited.",
-          desc: "By default, Squarespace websites can be embedded onto other websites as an iframe. Some site owners don't want their content embedded on other websites, so they toggle a setting to prevent it. By doing so, they also protect against a malicious practice known as \"<a href='https://en.wikipedia.org/wiki/Clickjacking' target='_blank'>clickjacking</a>.\"",
-          guide: "https://support.squarespace.com/hc/en-us/articles/205815758#:~:text=Enable%20clickjack%20protection"
+          desc: "By default, Squarespace websites can be embedded onto other websites as an iframe. Some site owners don't want their content embedded on other websites, so they toggle a setting to prevent it. By doing so, they also protect against a malicious practice known as \"<a href='https://en.wikipedia.org/wiki/Clickjacking' target='_blank'>clickjacking</a>.\"" + formatGuide("https://support.squarespace.com/hc/en-us/articles/205815758#:~:text=Enable%20clickjack%20protection")
         });
       }
       else if(message.content.preventClickjacking == false){
         appendResults("fail", results = {
           tags: ["security", "settings"],
           title: "Prohibit embedding by other websites.",
-          desc: "By default, Squarespace websites can be embedded onto other websites as an iframe. Some site owners don't want their content embedded on other websites, so they toggle a setting to prevent it. By doing so, they also protect against a malicious practice known as \"<a href='https://en.wikipedia.org/wiki/Clickjacking' target='_blank'>clickjacking</a>.\" This setting can be enabled from Settings ➜ Advanced ➜ Website Protection.",
-          guide: "https://support.squarespace.com/hc/en-us/articles/205815758#:~:text=Enable%20clickjack%20protection"
+          desc: "By default, Squarespace websites can be embedded onto other websites as an iframe. Some site owners don't want their content embedded on other websites, so they toggle a setting to prevent it. By doing so, they also protect against a malicious practice known as \"<a href='https://en.wikipedia.org/wiki/Clickjacking' target='_blank'>clickjacking</a>.\" This setting can be enabled from Settings ➜ Advanced ➜ Website Protection." + formatGuide("https://support.squarespace.com/hc/en-us/articles/205815758#:~:text=Enable%20clickjack%20protection")
         });
       }
     }
@@ -588,14 +578,14 @@ function displayResults(message){
       appendResults("fail", results = {
         tags: ["accessibility", "seo", "images"],
         title: "Add alt text to images.",
-        desc: "The following images are missing alt text:" + missingAltText
+        desc: "Alternative text is an invisible form of metadata used to describe image content to search engines. Alt text is also announced to visually-impaired users who use a <a href='https://www.youtube.com/watch?v=q_ATY9gimOM' target='_blank'>screen reader</a>, so it is important to provide an accurate and concise description of the image.</p><p>Providing an empty alt text value (also called \"null alt text\") prompts screen readers to ignore the image. This is only appropriate when the image is decorative and communicates no meaningful content. Otherwise, alt text should be provided. The way to change alt text depends where the image is being used. For example, image blocks have an alt text field within the block settings.</p>" + formatGuide("https://support.squarespace.com/hc/en-us/articles/206542357-Adding-alt-text-to-images") + "<p>The following images are missing alt text:" + missingAltText
       });
     }
     else{
       appendResults("pass", results = {
         tags: ["accessibility", "seo", "images"],
         title: "No images without alt text found.",
-        desc: "Lorem ipsum dolor sit amet. This is placeholder text that will explain more details."
+        desc: "Alternative text is an invisible form of metadata used to describe image content to search engines. Alt text is also announced to visually-impaired users who use a <a href='https://www.youtube.com/watch?v=q_ATY9gimOM' target='_blank'>screen reader</a>, so it is important to provide an accurate and concise description of the image." + formatGuide("https://support.squarespace.com/hc/en-us/articles/206542357-Adding-alt-text-to-images")
       });
     }
 
@@ -612,14 +602,14 @@ function displayResults(message){
       appendResults("fail", results = {
         tags: ["accessibility", "seo", "images"],
         title: "Improve image alt text.",
-        desc: "The following images have low-quality alt text:" + poorAltText
+        desc: "Alternative text is an invisible form of metadata used to describe image content to search engines. Alt text is also announced to visually-impaired users who use a <a href='https://www.youtube.com/watch?v=q_ATY9gimOM' target='_blank'>screen reader</a>, so it is important to provide an accurate and concise description of the image.</p><p>Most images uploaded to Squarespace default to using the filename as alt text, which is rarely appropriate. The way to change alt text depends where the image is being used. For example, image blocks have an alt text field within the block settings.</p>" + formatGuide("https://support.squarespace.com/hc/en-us/articles/206542357-Adding-alt-text-to-images") + "<p>The following images have low-quality alt text:" + poorAltText
       });
     }
     else{
       appendResults("pass", results = {
         tags: ["accessibility", "seo", "images"],
         title: "No low-quality alt text found.",
-        desc: "Lorem ipsum dolor sit amet. This is placeholder text that will explain more details."
+        desc: "Alternative text is an invisible form of metadata used to describe image content to search engines. Alt text is also announced to visually-impaired users who use a <a href='https://www.youtube.com/watch?v=q_ATY9gimOM' target='_blank'>screen reader</a>, so it is important to provide an accurate and concise description of the image." + formatGuide("https://support.squarespace.com/hc/en-us/articles/206542357-Adding-alt-text-to-images")
       });
     }
 
@@ -831,18 +821,17 @@ function appendResults(type, results){
     }
   }
 
-  var guideContent = "";
-  if(results.guide != null){
-    guideContent = "<a href='" + results.guide + "' target='_blank' class='guide'>View Squarespace's Help Guide ➜</a>";
-  }
-
   if(type == "pass"){
-    $("#pass").append("<h3 class='accordion' role='button' tabindex='0' aria-expanded='false' data-tags='" + results.tags.toString() + "'><img class='icon' src='../icons/pass.png' alt='Passed'>" + results.title + "<span class='accordion-indicator'>+</span></h3><div class='description accordion-panel'><ul class='tags'>" + tagsContent + "</ul><p>" + results.desc + "</p>" + guideContent + "</div>");
+    $("#pass").append("<h3 class='accordion' role='button' tabindex='0' aria-expanded='false' data-tags='" + results.tags.toString() + "'><img class='icon' src='../icons/pass.png' alt='Passed'>" + results.title + "<span class='accordion-indicator'>+</span></h3><div class='description accordion-panel'><ul class='tags'>" + tagsContent + "</ul><p>" + results.desc + "</p></div>");
   }
   else if(type == "fail"){
-    $("#fail").append("<h3 class='accordion' role='button' tabindex='0' aria-expanded='false' data-tags='" + results.tags.toString() + "'><img class='icon' src='../icons/fail.png' alt='Failed'>" + results.title + "<span class='accordion-indicator'>+</span></h3><div class='description accordion-panel'><ul class='tags'>" + tagsContent + "</ul><p>" + results.desc + "</p>" + guideContent + "</div>");
+    $("#fail").append("<h3 class='accordion' role='button' tabindex='0' aria-expanded='false' data-tags='" + results.tags.toString() + "'><img class='icon' src='../icons/fail.png' alt='Failed'>" + results.title + "<span class='accordion-indicator'>+</span></h3><div class='description accordion-panel'><ul class='tags'>" + tagsContent + "</ul><p>" + results.desc + "</p></div>");
   }
   else if(type == "info"){
-    $("#info").append("<h3 class='accordion' role='button' tabindex='0' aria-expanded='false' data-tags='" + results.tags.toString() + "'><img class='icon' src='../icons/info.png' alt='Info'>" + results.title + "<span class='accordion-indicator'>+</span></h3><div class='description accordion-panel'><p>" + results.desc + "<p>" + guideContent + "</div>");
+    $("#info").append("<h3 class='accordion' role='button' tabindex='0' aria-expanded='false' data-tags='" + results.tags.toString() + "'><img class='icon' src='../icons/info.png' alt='Info'>" + results.title + "<span class='accordion-indicator'>+</span></h3><div class='description accordion-panel'><p>" + results.desc + "<p></div>");
   }
+}
+
+function formatGuide(link){
+    return "<a href='" + link + "' target='_blank' class='guide'>View Squarespace's Help Guide ➜</a>";
 }
