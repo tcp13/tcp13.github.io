@@ -94,13 +94,12 @@ $("#sitePrompt button").click(function(){
   .fail(function(jqXHR, textStatus, errorThrown) {
     clearTimeouts();
     $(".spinner").hide();
-
-    console.log(jqXHR);
-    console.log(textStatus);
-    console.log(errorThrown);
-
-    $("#status h1").text("[" + textStatus + "] Hmm, I couldn't find a Squarespace website at that URL. Please try again.");
-    
+    if(jqXHR.status == 400){
+      $("#status h1").text("[E" + jqXHR.status + "] Hmm, I couldn't find a Squarespace website at that URL. Please try again.");
+    }
+    else{
+      $("#status h1").text("[E" + jqXHR.status + "] Hmm, something went wrong. Please try again later.");
+    }
   });
 });
 
