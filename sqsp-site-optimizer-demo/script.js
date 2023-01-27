@@ -68,6 +68,14 @@ $("#sitePrompt button").click(function(){
 	var loading3 = setTimeout(displayLoading, 40000, "Hmm, this is taking longer than expected...", false);
   var timeout = setTimeout(displayLoading, 65000, "[Timeout] Hmm, something went wrong. Please try again later.", true);
 
+  function doneLoading(){
+    $("#status").hide();
+    clearTimeout(loading1);
+    clearTimeout(loading2);
+    clearTimeout(loading3);
+    clearTimeout(timeout);
+  }
+
 	function displayLoading(loadMessage, timeout) {
 		$("#status h1").fadeOut("slow", function(){
 		  $("#status h1").html(loadMessage).fadeIn("slow");
@@ -78,23 +86,15 @@ $("#sitePrompt button").click(function(){
 	}
 
   $.get("https://site-audit-b3hxntgzxa-uk.a.run.app/?url=" + url, function(data, statusText){
-    if(statusText == "503"){
-      $(".spinner").hide();
-      $("#status h1").text("[503] Hmm, something went wrong. Please try again later.");
-      clearTimeout(loading1);
-      clearTimeout(loading2);
-      clearTimeout(loading3);
-      clearTimeout(timeout);
-    }
-    else{
-      console.log(data);
-      $("#status").hide();
-      clearTimeout(loading1);
-      clearTimeout(loading2);
-      clearTimeout(loading3);
-      clearTimeout(timeout);
-      displayResults(data);
-    }
+
+  })
+  .done(function(data) {
+    displayResults(data);
+    console.log(data);
+  })
+  .fail(function(jqXHR) {
+    doneLoading();
+    $("#status h1").text("[" + jqXHR.statusText + "] Hmm, something went wrong. Please try again later.");
   });
 });
 
