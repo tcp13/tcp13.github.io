@@ -832,7 +832,7 @@ function appendResults(type, results){
   }
 
   var guideContent = "";
-  if(results.guideContent != null){
+  if(results.guide != null){
     guideContent = "<a href='" + results.guideContent + "' target='_blank' class='guide'>View Squarespace's Help Guide ➜</a>";
   }
 
