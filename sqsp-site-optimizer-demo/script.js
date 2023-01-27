@@ -57,7 +57,7 @@ const message = {
 
 $("#sitePrompt button").click(function(){
 
-  $("#sitePrompt").hide();
+  $("#sitePrompt, #reportTitle").hide();
   $("#status h1").text("Loading...");
   $("#status").fadeIn(2000);
   
@@ -66,7 +66,7 @@ $("#sitePrompt button").click(function(){
 	var loading1 = setTimeout(displayLoading, 5000, "Scanning website... hang tight!", false);
 	var loading2 = setTimeout(displayLoading, 15000, "Still loading...", false);
 	var loading3 = setTimeout(displayLoading, 40000, "Hmm, this is taking longer than expected...", false);
-  var timeout = setTimeout(displayLoading, 65000, "[Timeout Error] Hmm, something went wrong. Please try again later.", true);
+  var timeout = setTimeout(displayLoading, 65000, "[Timeout] Hmm, something went wrong. Please try again later.", true);
 
 	function displayLoading(loadMessage, timeout) {
 		$("#status h1").fadeOut("slow", function(){
@@ -77,8 +77,8 @@ $("#sitePrompt button").click(function(){
     }
 	}
 
-  $.get("https://site-audit-b3hxntgzxa-uk.a.run.app/?url=" + url, function(data, status){
-    if(status == 503){
+  $.get("https://site-audit-b3hxntgzxa-uk.a.run.app/?url=" + url, function(data, statusText){
+    if(statusText == "503"){
       $(".spinner").hide();
       $("#status h1").text("[503] Hmm, something went wrong. Please try again later.");
       clearTimeout(loading1);
@@ -110,7 +110,7 @@ function displayResults(message){
     $("#results").fadeIn();
     $("header").addClass("fixed");
     $("footer").removeClass("fixed");
-    $("header h1").text(message.metadata.host);
+    $("#reportTitle").text(message.metadata.host).show();
     $("header #reportOptions").prepend("<p>Generated " + message.date + "</p>").fadeIn();
 
     // METADATA
