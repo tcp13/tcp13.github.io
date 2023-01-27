@@ -351,10 +351,7 @@ code{
     color:var(--black);
     text-decoration: none;
     display:block;
-}
-
-.guide::after{
-    content: " ➜";
+    margin-top:1rem;
 }
 
 .guide:hover{

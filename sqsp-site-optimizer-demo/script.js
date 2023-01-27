@@ -264,7 +264,8 @@ function displayResults(message){
         appendResults("pass", results = {
           tags: ["brand"],
           title: "Site uses a custom favicon.",
-          desc: "A favicon is a small icon displayed by web browsers next to the page title.<a href='https://support.squarespace.com/hc/en-us/articles/206542527-Adding-a-favicon-or-browser-icon' target='_blank'>View Squarespace's Help Guide</a>"
+          desc: "A favicon is a small icon displayed by web browsers next to the page title.",
+          guide: "https://support.squarespace.com/hc/en-us/articles/206542527-Adding-a-favicon-or-browser-icon"
         });
       }
       else if(message.content.customFavicon == false){
@@ -277,7 +278,8 @@ function displayResults(message){
         appendResults("fail", results = {
           tags: ["brand"],
           title: "Add a custom favicon.",
-          desc: "A favicon is a small icon displayed by web browsers next to the page title. " + instructions
+          desc: "A favicon is a small icon displayed by web browsers next to the page title. " + instructions,
+          guide: "https://support.squarespace.com/hc/en-us/articles/206542527-Adding-a-favicon-or-browser-icon"
         });
       }
     }
@@ -288,14 +290,16 @@ function displayResults(message){
         appendResults("pass", results = {
           tags: ["settings"],
           title: "Squarespace badge is deactivated.",
-          desc: "Lorem ipsum dolor sit amet. This is placeholder text that will explain more details."
+          desc: 'By default, most templates display a "Made with Squarespace" badge, which can be removed by editing the footer.',
+          guide: "https://support.squarespace.com/hc/en-us/articles/205815988-Removing-Made-with-Squarespace-from-your-site"
         });
       }
       else if(message.content.badge == true){
         appendResults("fail", results = {
           tags: ["settings"],
           title: "Deactivate Squarespace badge.",
-          desc: "Lorem ipsum dolor sit amet. This is placeholder text that will explain the suggestion and link to an official Squarespace Help Center guide for more details."
+          desc: 'By default, most templates display a "Made with Squarespace" badge, which can be removed by editing the footer.',
+          guide: "https://support.squarespace.com/hc/en-us/articles/205815988-Removing-Made-with-Squarespace-from-your-site"
         });
       }
     }
@@ -306,14 +310,16 @@ function displayResults(message){
         appendResults("pass", results = {
           tags: ["seo", "speed", "settings"],
           title: "Site uses AMP for blog posts.",
-          desc: "Lorem ipsum dolor sit amet. This is placeholder text that will explain more details."
+          desc: "Accelerated Mobile Pages (AMP) is a simplified format used to load blog posts more quickly on mobile devices.",
+          guide: "https://support.squarespace.com/hc/en-us/articles/223766868"
         });
       }
       else if(message.content.ampEnabled == false){
         appendResults("fail", results = {
           tags: ["seo", "speed", "settings"],
           title: "Enable AMP for blog posts.",
-          desc: "Lorem ipsum dolor sit amet. This is placeholder text that will explain the suggestion and link to an official Squarespace Help Center guide for more details."
+          desc: "Accelerated Mobile Pages (AMP) is a simplified format used to load blog posts more quickly on mobile devices. AMP can be enabled for this website from Settings ➜ Blogging ➜ Accelerated Mobile Pages.",
+          guide: "https://support.squarespace.com/hc/en-us/articles/223766868"
         });
       }
     }
@@ -324,14 +330,16 @@ function displayResults(message){
         appendResults("pass", results = {
           tags: ["accessibility", "userinput", "settings"],
           title: "Escape key login is deactivated.",
-          desc: "Lorem ipsum dolor sit amet. This is placeholder text that will explain more details."
+          desc: "Escape Key Login allows site owners to quickly switch to the back-end editor by pressing the escape key from the live website. While convenient for editing, this feature should be deactivated after launch to avoid major accessibility issues for screen reader users. This setting can be deactivated from Settings ➜ Advanced ➜ Escape Key.",
+          guide: "https://support.squarespace.com/hc/en-us/articles/205815858"
         });
       }
       else if(message.content.escapeLogin == true){
         appendResults("fail", results = {
           tags: ["accessibility", "userinput", "settings"],
           title: "Deactivate escape key login.",
-          desc: "Lorem ipsum dolor sit amet. This is placeholder text that will explain the suggestion and link to an official Squarespace Help Center guide for more details."
+          desc: "Escape Key Login allows site owners to quickly switch to the back-end editor by pressing the escape key from the live website. While convenient for editing, this feature should be deactivated after launch to avoid major accessibility issues for screen reader users.",
+          guide: "https://support.squarespace.com/hc/en-us/articles/205815858"
         });
       }
     }
@@ -360,14 +368,16 @@ function displayResults(message){
         appendResults("pass", results = {
           tags: ["security", "settings"],
           title: "Embedding by other websites is prohibited.",
-          desc: "Lorem ipsum dolor sit amet. This is placeholder text that will explain more details."
+          desc: "By default, Squarespace websites can be embedded onto other websites as an iframe. Some site owners don't want their content embedded on other websites, so they toggle a setting to prevent it. By doing so, they also protect against a malicious practice known as \"<a href='https://en.wikipedia.org/wiki/Clickjacking' target='_blank'>clickjacking</a>.\"",
+          guide: "https://support.squarespace.com/hc/en-us/articles/205815758#:~:text=Enable%20clickjack%20protection"
         });
       }
       else if(message.content.preventClickjacking == false){
         appendResults("fail", results = {
           tags: ["security", "settings"],
           title: "Prohibit embedding by other websites.",
-          desc: "Lorem ipsum dolor sit amet. This is placeholder text that will explain the suggestion and link to an official Squarespace Help Center guide for more details."
+          desc: "By default, Squarespace websites can be embedded onto other websites as an iframe. Some site owners don't want their content embedded on other websites, so they toggle a setting to prevent it. By doing so, they also protect against a malicious practice known as \"<a href='https://en.wikipedia.org/wiki/Clickjacking' target='_blank'>clickjacking</a>.\" This setting can be enabled from Settings ➜ Advanced ➜ Website Protection.",
+          guide: "https://support.squarespace.com/hc/en-us/articles/205815758#:~:text=Enable%20clickjack%20protection"
         });
       }
     }
@@ -688,7 +698,8 @@ function displayResults(message){
         appendResults("pass", results = {
           tags: ["legal", "commerce"],
           title: "Commerce checkout includes terms and policies.",
-          desc: "Lorem ipsum dolor sit amet. This is placeholder text that will explain more details."
+          desc: "For ecommerce websites, policy links can be displayed on the checkout page.",
+          guide: "https://support.squarespace.com/hc/en-us/articles/360002111987#toc-checkout-settings:~:text=Add%20and%20format%20these%20policies"
         });
       }
       else{
@@ -705,7 +716,8 @@ function displayResults(message){
         appendResults("fail", results = {
           tags: ["legal", "commerce"],
           title: "Add terms and policies to commerce checkout.",
-          desc: "The following are missing from commerce checkout:<ul>" + checkoutPolicies + "</ul>"
+          desc: "For ecommerce websites, policy links can be displayed on the checkout page. The following are missing from this website's checkout:<ul>" + checkoutPolicies + "</ul>",
+          guide: "https://support.squarespace.com/hc/en-us/articles/360002111987#toc-checkout-settings:~:text=Add%20and%20format%20these%20policies"
         });
       }
     }
@@ -819,13 +831,18 @@ function appendResults(type, results){
     }
   }
 
+  var guideContent = "";
+  if(results.guideContent != null){
+    guideContent = "<a href='" + results.guideContent + "' target='_blank' class='guide'>View Squarespace's Help Guide ➜</a>";
+  }
+
   if(type == "pass"){
-    $("#pass").append("<h3 class='accordion' role='button' tabindex='0' aria-expanded='false' data-tags='" + results.tags.toString() + "'><img class='icon' src='../icons/pass.png' alt='Passed'>" + results.title + "<span class='accordion-indicator'>+</span></h3><div class='description accordion-panel'><ul class='tags'>" + tagsContent + "</ul><p>" + results.desc + "</p></div>");
+    $("#pass").append("<h3 class='accordion' role='button' tabindex='0' aria-expanded='false' data-tags='" + results.tags.toString() + "'><img class='icon' src='../icons/pass.png' alt='Passed'>" + results.title + "<span class='accordion-indicator'>+</span></h3><div class='description accordion-panel'><ul class='tags'>" + tagsContent + "</ul><p>" + results.desc + "</p>" + guideContent + "</div>");
   }
   else if(type == "fail"){
-    $("#fail").append("<h3 class='accordion' role='button' tabindex='0' aria-expanded='false' data-tags='" + results.tags.toString() + "'><img class='icon' src='../icons/fail.png' alt='Failed'>" + results.title + "<span class='accordion-indicator'>+</span></h3><div class='description accordion-panel'><ul class='tags'>" + tagsContent + "</ul><p>" + results.desc + "</p></div>");
+    $("#fail").append("<h3 class='accordion' role='button' tabindex='0' aria-expanded='false' data-tags='" + results.tags.toString() + "'><img class='icon' src='../icons/fail.png' alt='Failed'>" + results.title + "<span class='accordion-indicator'>+</span></h3><div class='description accordion-panel'><ul class='tags'>" + tagsContent + "</ul><p>" + results.desc + "</p>" + guideContent + "</div>");
   }
   else if(type == "info"){
-    $("#info").append("<h3 class='accordion' role='button' tabindex='0' aria-expanded='false' data-tags='" + results.tags.toString() + "'><img class='icon' src='../icons/info.png' alt='Info'>" + results.title + "<span class='accordion-indicator'>+</span></h3><div class='description accordion-panel'>" + results.desc + "</div>");
+    $("#info").append("<h3 class='accordion' role='button' tabindex='0' aria-expanded='false' data-tags='" + results.tags.toString() + "'><img class='icon' src='../icons/info.png' alt='Info'>" + results.title + "<span class='accordion-indicator'>+</span></h3><div class='description accordion-panel'><p>" + results.desc + "<p>" + guideContent + "</div>");
   }
 }
