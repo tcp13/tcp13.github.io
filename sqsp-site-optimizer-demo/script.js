@@ -61,7 +61,7 @@ $("#sitePrompt button").click(function(){
   $("#status h1").text("Loading...");
   $("#status").fadeIn(2000);
   
-  var url = $("#sitePrompt input").val();
+  var url = new URL($("#sitePrompt input").val()).host;
 
 	var loading1 = setTimeout(displayLoading, 5000, "Scanning website... hang tight!", false);
 	var loading2 = setTimeout(displayLoading, 15000, "Still loading...", false);
@@ -264,7 +264,7 @@ function displayResults(message){
         appendResults("pass", results = {
           tags: ["brand"],
           title: "Site uses a custom favicon.",
-          desc: "Lorem ipsum dolor sit amet. This is placeholder text that will explain more details."
+          desc: "Lorem ipsum dolor sit amet. This is placeholder text that will explain more details.<a href='https://support.squarespace.com/hc/en-us/articles/206542527-Adding-a-favicon-or-browser-icon' target='_blank'>View Squarespace's Help Guide</a>"
         });
       }
       else if(message.content.customFavicon == false){
