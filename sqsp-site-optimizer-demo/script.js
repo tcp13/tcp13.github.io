@@ -1,75 +1,35 @@
 
-/* DEMO RESPONSE */
+/* response init */
 const message = {
-  status: 200,
+  status: 500,
   error: null,
-  date: 'Jan 24, 2023',
+  date: null,
   metadata: {
-    url: 'https://kristineneil.com',
-    host: 'kristineneil.com',
-    builtinDomain: 'kristineneildesign.squarespace.com',
-    version: '7.1',
-    template: '7.1',
-    devMode: false,
-    ajaxLoading: false,
-    fluidEngine: true,
-    siteTitle: 'Kristine Neil •  Squarespace eCommerce Expert',
-    pageTitle: 'Kristine Neil • Squarespace eCommerce Web Design',
-    description: 'As a Squarespace eCommerce Web Designer, my simple eCommerce solutions help you sell on Squarespace with confidence so that you can grow your business.',
-    thumbnail: 'http://static1.squarespace.com/static/5dc9a0658101a7767998c198/t/62e32690ada3de33f2170862/1659053712564/Kristine+Neil+Logo+New+2022.png?format=1500w',     
-    firstPaint: 2282,
-    firstContentfulPaint: 2410,
-    blockCount: 47,
-    sectionCount: 10
+    url: null,
+    host: null,
+    builtinDomain: null,
+    version: null,
+    template: null,
+    devMode: null,
+    ajaxLoading: null,
+    fluidEngine: null,
+    siteTitle: null,
+    pageTitle: null,
+    description: null,
+    thumbnail: null,     
+    firstPaint: null,
+    firstContentfulPaint: null,
+    blockCount: null,
+    sectionCount: null
   },
   content: {
-    customFavicon: true,
-    fonts: [ 'sans-serif', 'sofia-pro', 'oswald', 'ivypresto-display' ],
-    colors: [
-      '#273647',
-      '#ffffff',
-      '#000000',
-      '#da462f',
-      '#f5f5f5',
-      '#bfbfc7',
-      '#bbbbbb'
-    ],
-    contrast: [
-      'rgb(39, 54, 71) on rgba(0, 0, 0, 0)',
-      'rgb(255, 255, 255) on rgb(218, 70, 47)',
-      'rgb(255, 255, 255) on rgba(0, 0, 0, 0)',
-      'rgb(0, 0, 0) on rgba(0, 0, 0, 0)',
-      'rgb(0, 0, 0) on rgb(39, 54, 71)',
-      'rgb(39, 54, 71) on rgb(236, 235, 228)',
-      'rgb(39, 54, 71) on rgba(39, 54, 71, 0.5)',
-      'rgb(218, 70, 47) on rgba(0, 0, 0, 0)',
-      'rgb(245, 245, 245) on rgba(0, 0, 0, 0)',
-      'rgb(245, 245, 245) on rgb(39, 54, 71)',
-      'rgb(245, 245, 245) on rgba(39, 54, 71, 0.5)',
-      'rgb(39, 54, 71) on rgb(245, 245, 245)',
-      'rgb(0, 0, 0) on rgb(255, 255, 255)',
-      'rgb(255, 255, 255) on rgba(0, 0, 0, 0.12)',
-      'rgb(39, 54, 71) on rgb(253, 232, 226)',
-      'rgb(191, 191, 199) on rgb(255, 255, 255)',
-      'rgb(255, 255, 255) on rgb(255, 255, 255)',
-      'rgb(187, 187, 187) on rgb(39, 54, 71)'
-    ],
-    custom404: true,
+    customFavicon: null,
+    fonts: [],
+    colors: [],
+    contrast: [],
+    custom404: null,
     placeholder: [],
-    spellcheck: [
-      'eCommerce',    'Kristine',
-      'MAGEE',        'KRISTINE',
-      'eCOMMERCE',    'ECOMMERCE',
-      'VE',           'Ryan',
-      'Marius',       'Morf',
-      've',           'Matterhorn',
-      'Amanda',       'Foley',
-      'eCommmerce',   'DIY',
-      'Google',       'LiveChat',
-      'converting',   'NEIL',
-      'DELIEVERED',   'Neil',
-      'kristineneil', '2019-2023'
-    ],
+    spellcheck: [],
     emptyHeadings: [],
     ambiguousLinkText: [],
     sameWindowLinks: [],
@@ -78,30 +38,17 @@ const message = {
     poorAltText: [],
     largeGalleries: [],
     brokenForms: [],
-    checkoutTerms: true,
-    checkoutReturn: true,
-    checkoutPrivacy: true,
-    outdatedLibraries: [
-      {
-        name: 'jQuery',
-        version: '3.6.0',
-        link: 'https://code.jquery.com/jquery-3.6.0.min.js',
-        current: 'https://releases.jquery.com/'
-      },
-      {
-        name: 'jQuery',
-        version: '3.5.1',
-        link: 'https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js',
-        current: 'https://releases.jquery.com/'
-      }
-    ],
-    https: true,
-    escapeLogin: true,
-    ampEnabled: true,
-    preventClickjacking: false,
-    cookieNotice: false,
-    analyticsCookies: true,
-    badge: false
+    checkoutTerms: null,
+    checkoutReturn: null,
+    checkoutPrivacy: null,
+    outdatedLibraries: [],
+    https: null,
+    escapeLogin: null,
+    ampEnabled: null,
+    preventClickjacking: null,
+    cookieNotice: null,
+    analyticsCookies: null,
+    badge: null
   },
   sitemap: null
 };
@@ -111,25 +58,35 @@ const message = {
 $("#sitePrompt button").click(function(){
 
   $("#sitePrompt").hide();
+  $("#status h1").text("Loading...");
   $("#status").fadeIn(2000);
-  $("header h1").text("Loading...");
+  
   var url = $("#sitePrompt input").val();
 
-	var loading1 = setTimeout(displayLoading, 3000, "loading 1", false);
-	var loading2 = setTimeout(displayLoading, 10000, "looooading 2", false);
-	var loading3 = setTimeout(displayLoading, 15000, "loooooooooooading 3", false);
-  var timeout = setTimeout(displayLoading, 65000, "ERROR: Timeout", true);
+	var loading1 = setTimeout(displayLoading, 5000, "Scanning website... hang tight!", false);
+	var loading2 = setTimeout(displayLoading, 15000, "Still loading...", false);
+	var loading3 = setTimeout(displayLoading, 40000, "Hmm, this is taking longer than expected...", false);
+  var timeout = setTimeout(displayLoading, 65000, "[Timeout Error] Hmm, something went wrong. Please try again later.", true);
 
 	function displayLoading(loadMessage, timeout) {
-		$("header h1").fadeOut("slow", function(){
-		  $("header h1").html("<span role='alert'>" + loadMessage + "</span>").fadeIn("slow");
+		$("#status h1").fadeOut("slow", function(){
+		  $("#status h1").html(loadMessage).fadeIn("slow");
 		});
     if(timeout == true){
-      $("#status").hide();
+      $(".spinner").hide();
     }
 	}
 
-  $.get("https://site-audit-b3hxntgzxa-uk.a.run.app/?url=" + url, function(data){
+  $.get("https://site-audit-b3hxntgzxa-uk.a.run.app/?url=" + url, function(data, status){
+    if(status == 503){
+      $(".spinner").hide();
+      $("#status h1").text("[503] Hmm, something went wrong. Please try again later.");
+      clearTimeout(loading1);
+      clearTimeout(loading2);
+      clearTimeout(loading3);
+      clearTimeout(timeout);
+    }
+    else{
       console.log(data);
       $("#status").hide();
       clearTimeout(loading1);
@@ -137,9 +94,15 @@ $("#sitePrompt button").click(function(){
       clearTimeout(loading3);
       clearTimeout(timeout);
       displayResults(data);
+    }
   });
 });
 
+$("#sitePrompt input").on('keypress', function (e) {
+  if(e.which === 13){
+      $("#go").click();
+  }
+});
 
 
 function displayResults(message){
@@ -273,6 +236,7 @@ function displayResults(message){
     // SUGGESTIONS & PASSED AUDITS
 
     // results template
+    /*
     if(false){
 
       appendResults("pass", results = {
@@ -287,7 +251,7 @@ function displayResults(message){
         desc: "Lorem ipsum dolor sit amet. This is placeholder text that will explain the suggestion and link to an official Squarespace Help Center guide for more details."
       });
 
-    }
+    }*/
 
     // custom favicon
     if(message.content.customFavicon != null){
