@@ -474,21 +474,21 @@ function displayResults(message){
     if(message.content.ambiguousLinkText[0] != null){
       let ambiguousLinkText = "";
       for(i=0; i<message.content.ambiguousLinkText.length; i++){
-        ambiguousLinkText += "<li>" + message.content.ambiguousLinkText[i].link
+        ambiguousLinkText += "<li>" + message.content.ambiguousLinkText[i].text
         if(message.content.ambiguousLinkText[i].near != null){
           ambiguousLinkText += " <span class='near'>(near " + message.content.ambiguousLinkText[i].near + ")</span>";
         }
         ambiguousLinkText += "</li>";
       }
       appendResults("fail", results = {
-        tags: ["accessibility", "links"],
+        tags: ["accessibility", "seo", "links"],
         title: "Update ambiguous link text.",
         desc: "Link text provides context for visually-impaired users who use a <a href='https://www.youtube.com/watch?v=q_ATY9gimOM' target='_blank'>screen reader</a>, so it is important to provide an accurate and concise description of where the link goes. Generic link text, such as \"click here\" or \"read more,\" does not give the user enough information about the link's destination. Appropriate link text can also help search engines more easily understand a website’s content." + formatGuide("https://support.squarespace.com/hc/en-us/articles/215129127#toc-links") + "The following links have ambiguous text:<ul>" + ambiguousLinkText + "</ul>"
       });
     }
     else{
       appendResults("pass", results = {
-        tags: ["accessibility", "links"],
+        tags: ["accessibility", "seo", "links"],
         title: "No ambiguous link text found.",
         desc: "Link text provides context for visually-impaired users who use a <a href='https://www.youtube.com/watch?v=q_ATY9gimOM' target='_blank'>screen reader</a>, so it is important to provide an accurate and concise description of where the link goes. Generic link text, such as \"click here\" or \"read more,\" does not give the user enough information about the link's destination. Appropriate link text can also help search engines more easily understand a website’s content." + formatGuide("https://support.squarespace.com/hc/en-us/articles/215129127#toc-links")
       });
@@ -498,21 +498,21 @@ function displayResults(message){
     if(message.content.emptyLinks[0] != null){
       let emptyLinks = "";
       for(i=0; i<message.content.emptyLinks.length; i++){
-        emptyLinks += "<li>link";
+        emptyLinks += "<li>link ";
         if(message.content.emptyLinks[i].near != null){
           emptyLinks +=  "<span class='near'>(near " + message.content.emptyLinks[i].near + ")</span>";
         }
         emptyLinks += "</li>";
       }
       appendResults("fail", results = {
-        tags: ["accessibility", "links"],
+        tags: ["accessibility", "seo", "links"],
         title: "Remove empty links.",
         desc: "Link text provides context for visually-impaired users who use a <a href='https://www.youtube.com/watch?v=q_ATY9gimOM' target='_blank'>screen reader</a>, so it is important to provide an accurate and concise description of where the link goes. An empty link does not give the user any information about its destination. Appropriate link text can also help search engines more easily understand a website’s content." + formatGuide("https://support.squarespace.com/hc/en-us/articles/215129127#toc-links") + "The following links are empty:<ul>" + emptyLinks + "</ul>"
       });
     }
     else{
       appendResults("pass", results = {
-        tags: ["accessibility", "links"],
+        tags: ["accessibility", "seo", "links"],
         title: "No empty links found.",
         desc: "Link text provides context for visually-impaired users who use a <a href='https://www.youtube.com/watch?v=q_ATY9gimOM' target='_blank'>screen reader</a>, so it is important to provide an accurate and concise description of where the link goes. An empty link does not give the user any information about its destination. Appropriate link text can also help search engines more easily understand a website’s content." + formatGuide("https://support.squarespace.com/hc/en-us/articles/215129127#toc-links")
       });
@@ -642,7 +642,7 @@ function displayResults(message){
     if(message.content.brokenForms[0] != null){
       let brokenForms = "";
       for(i=0; i<message.content.brokenForms.length; i++){
-        brokenForms += "<li>" + message.content.brokenForms[i].type + " images";
+        brokenForms += "<li>" + message.content.brokenForms[i].type + " ";
         if(message.content.brokenForms[i].near){
           brokenForms += " <span class='near'>(near " + message.content.brokenForms[i].near + ")</span>";
         }
@@ -664,9 +664,8 @@ function displayResults(message){
     
     // outdated libraries
     if(message.content.outdatedLibraries[0] != null){
-      let outdatedLibraries = "";
+      let outdatedLibraries = "Keeping libraries updated can fix known security vulnerabilities and improve performance by optimizing the efficiency of custom code.</p>";
       for(i=0; i<message.content.outdatedLibraries.length; i++){
-        outdatedLibraries += "Keeping libraries updated can fix known security vulnerabilities and improve performance by optimizing the efficiency of custom code.</p>"
         outdatedLibraries += "<p><strong>" + message.content.outdatedLibraries[i].name + " is out of date!</strong>";
         outdatedLibraries += "<ul class='code-list'><li>Version " + message.content.outdatedLibraries[i].version + " is currently installed. It looks something like this within the site's custom code: <code>&lt;script src='" + message.content.outdatedLibraries[i].link + "'&gt;&lt;/script&gt;</code>.</li><li>Consider replacing it with <a href='" + message.content.outdatedLibraries[i].current + "' target='_blank'>the current version of " + message.content.outdatedLibraries[i].name + " found here</a>. Use caution, as upgrading can cause unexpected issues with plugins that may use deprecated features from the outdated version.</li></ul>";
       }
