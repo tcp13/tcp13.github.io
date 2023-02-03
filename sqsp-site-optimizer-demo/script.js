@@ -773,49 +773,49 @@ function appendResults(type, results){
       tagsContent += "<li class='tooltip'>Accessibility<span class='tooltip-text'>Accessibiliy is the practice of making websites more usable for people with disabilities.</span></li>";
     }
     else if(results.tags[i] == "seo"){
-      tagsContent += "<li class='tooltip'>SEO<span class='tooltip-text'>Search Engine Optimization (SEO) is the practice of helping search engines better understand content with the goal of improving site ranking.</span></li>";
+      tagsContent += "<li class='tooltip'>SEO<span class='tooltip-text'>Search Engine Optimization (SEO) is the practice of helping search engines better understand content with the goal of ranking higher for certain keywords.</span></li>";
     }
     else if(results.tags[i] == "privacy"){
-      tagsContent += "<li class='tooltip'>Privacy<span class='tooltip-text'>Privacy is the practice of protecting users by limiting the collection of their personal information.</span></li>";
+      tagsContent += "<li class='tooltip'>Privacy<span class='tooltip-text'>Privacy is the practice of protecting the personal information of site visitors by limiting the collection of data.</span></li>";
     }
     else if(results.tags[i] == "security"){
-      tagsContent += "<li class='tooltip'>Security<span class='tooltip-text'>Security is the practice of protecting a website and its users from malicious exploitation.</span></li>";
+      tagsContent += "<li class='tooltip'>Security<span class='tooltip-text'>Security is the practice of protecting a website and its users from malicious acts.</span></li>";
     }
     else if(results.tags[i] == "speed"){
-      tagsContent += "<li class='tooltip'>Speed<span class='tooltip-text'>Speed is how fast users can interact with a website by downloading all of its content.</span></li>";
+      tagsContent += "<li class='tooltip'>Speed<span class='tooltip-text'>Speed refers to the time it takes for a website to load before users can interact with its content.</span></li>";
     }
     else if(results.tags[i] == "legal"){
-      tagsContent += "<li class='tooltip'>Legal<span class='tooltip-text'>Lorem ipsum! This is placeholder text.</span></li>";
+      tagsContent += "<li class='tooltip'>Legal<span class='tooltip-text'>Legal best practices include complying with relevant laws and providing clear user agreements.</span></li>";
     }
     else if(results.tags[i] == "brand"){
-      tagsContent += "<li class='tooltip'>Brand<span class='tooltip-text'>Lorem ipsum! This is placeholder text.</span></li>";
+      tagsContent += "<li class='tooltip'>Brand<span class='tooltip-text'>Brand refers to the consistency of visual and stylistic elements that create a unified experience.</span></li>";
     }
     else if(results.tags[i] == "copywriting"){
-      tagsContent += "<li class='tooltip'>Copywriting<span class='tooltip-text'>Lorem ipsum! This is placeholder text.</span></li>";
+      tagsContent += "<li class='tooltip'>Copywriting<span class='tooltip-text'>Copywriting is the production of text content that provides relevant information and helps increase conversions.</span></li>";
     }
     else if(results.tags[i] == "links"){
-      tagsContent += "<li class='tooltip'>Links<span class='tooltip-text'>Lorem ipsum! This is placeholder text.</span></li>";
+      tagsContent += "<li class='tooltip'>Links<span class='tooltip-text'>Links include text links, navigation links, linked images, and other linked content.</span></li>";
     }
     else if(results.tags[i] == "images"){
-      tagsContent += "<li class='tooltip'>Images<span class='tooltip-text'>Lorem ipsum! This is placeholder text.</span></li>";
+      tagsContent += "<li class='tooltip'>Images<span class='tooltip-text'>Images include image blocks, background images, gallery blocks, and other image content.</span></li>";
     }
     else if(results.tags[i] == "audiovideo"){
-      tagsContent += "<li class='tooltip'>Audio & Video<span class='tooltip-text'>Lorem ipsum! This is placeholder text.</span></li>";
+      tagsContent += "<li class='tooltip'>Audio & Video<span class='tooltip-text'>Audio & Video content includes audio blocks, video blocks, and other multimedia content.</span></li>";
     }
     else if(results.tags[i] == "userinput"){
-      tagsContent += "<li class='tooltip'>User Input<span class='tooltip-text'>Lorem ipsum! This is placeholder text.</span></li>";
+      tagsContent += "<li class='tooltip'>User Input<span class='tooltip-text'>User input includes form blocks, newsletter blocks, and other interactable content.</span></li>";
     }
     else if(results.tags[i] == "commerce"){
-      tagsContent += "<li class='tooltip'>Commerce<span class='tooltip-text'>Lorem ipsum! This is placeholder text.</span></li>";
+      tagsContent += "<li class='tooltip'>Commerce<span class='tooltip-text'>Commerce refers to websites with an online store used to sell products or services.</span></li>";
     }
     else if(results.tags[i] == "customcode"){
-      tagsContent += "<li class='tooltip'>Custom Code<span class='tooltip-text'>Lorem ipsum! This is placeholder text.</span></li>";
+      tagsContent += "<li class='tooltip'>Custom Code<span class='tooltip-text'>Custom Code refers to CSS or Javascript injected into a website to customize elements beyond its native template options.</span></li>";
     }
     else if(results.tags[i] == "domain"){
-      tagsContent += "<li class='tooltip'>Domain<span class='tooltip-text'>Lorem ipsum! This is placeholder text.</span></li>";
+      tagsContent += "<li class='tooltip'>Domain<span class='tooltip-text'>Domain refers to the unique address used to identify a website.</span></li>";
     }
     else if(results.tags[i] == "settings"){
-      tagsContent += "<li class='tooltip'>Settings<span class='tooltip-text'>Lorem ipsum! This is placeholder text.</span></li>";
+      tagsContent += "<li class='tooltip'>Settings<span class='tooltip-text'>Settings refers to easily toggleable options used to configure a website.</span></li>";
     }
   }
 
