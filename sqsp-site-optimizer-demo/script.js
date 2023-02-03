@@ -268,11 +268,12 @@ function displayResults(message){
         });
       }
       else if(message.content.customFavicon == false){
+        let instructions = "";
         if(message.metadata.version == "7.0"){
-          let instructions = "A favicon can be added to this website from Design ➜ Logo & Title ➜ Browser Icon. Squarespace recommends using a 200x200 .png file no larger than 100 KB."
+          instructions = "A favicon can be added to this website from Design ➜ Logo & Title ➜ Browser Icon. Squarespace recommends using a 200x200 .png file no larger than 100 KB."
         }
-        else if(message.metadata.version == "7.0"){
-          let instructions = "A favicon can be added to this website from Design ➜ Browser Icon. Squarespace recommends using a 200x200 .png file no larger than 100 KB."
+        else if(message.metadata.version == "7.1"){
+          instructions = "A favicon can be added to this website from Design ➜ Browser Icon. Squarespace recommends using a 200x200 .png file no larger than 100 KB."
         }
         appendResults("fail", results = {
           tags: ["brand"],

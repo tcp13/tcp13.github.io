@@ -363,7 +363,6 @@ code{
 
 .guide:hover{
     border: 2px solid var(--black);
-    text-decoration: underline;
 }
 
 /*loading animations*/
