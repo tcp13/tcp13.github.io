@@ -332,7 +332,7 @@ function displayResults(message){
         appendResults("fail", results = {
           tags: ["accessibility", "userinput", "settings"],
           title: "Deactivate escape key login.",
-          desc: "Escape Key Login allows site owners to quickly switch to the back-end editor by pressing the escape key from the live website. While convenient for editing, this feature should be deactivated after launch to avoid major accessibility issues for <a href='https://www.youtube.com/watch?v=q_ATY9gimOM' target='_blank'>screen reader users</a>." + formatGuide("https://support.squarespace.com/hc/en-us/articles/205815858")
+          desc: "Escape Key Login allows site owners to quickly switch to the back-end editor by pressing the escape key from the live website. While convenient for editing, this feature should be deactivated after launch to avoid major accessibility issues for <a href='https://www.youtube.com/watch?v=q_ATY9gimOM' target='_blank'>screen reader users</a>.</p><p>Instead, try logging in from <a href='https://account.squarespace.com' target='_blank'>account.squarespace.com</a> or <a href='https://" + message.metadata.host + "/config' target='_blank'>" + message.metadata.host + "/config</a>" + formatGuide("https://support.squarespace.com/hc/en-us/articles/205815858")
         });
       }
     }
