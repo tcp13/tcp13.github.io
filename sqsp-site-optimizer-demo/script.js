@@ -396,7 +396,7 @@ function displayResults(message){
         appendResults("pass", results = {
           tags: ["privacy", "settings"],
           title: "Analytics cookies are deactivated.",
-          desc: "Squarespace websites use cookies to store information about visitors and track their activity. Consider whether this site actually needs to collect analytics data, and if appropriate, deactivate analytics cookies. Cookie settings can be toggled for this website from Settings ➜ Cookies & Visitor Data." + formatGuide("https://support.squarespace.com/hc/en-us/articles/360001264507#toc-disable-analytics-and-performance-cookies")
+          desc: "Squarespace websites use cookies to store information about visitors and track their activity." + formatGuide("https://support.squarespace.com/hc/en-us/articles/360001264507#toc-disable-analytics-and-performance-cookies")
         });
       }
       else if(message.content.analyticsCookies == true){
@@ -456,14 +456,14 @@ function displayResults(message){
       }
 
       appendResults("fail", results = {
-        tags: ["copywriting"],
+        tags: ["seo", "copywriting"],
         title: "Check the spelling of unrecognized words.",
         desc: "The following words were not found in the English dictionary:<ul>" + spellErrors + "</ul>"
       });
     }
     else{
       appendResults("pass", results = {
-        tags: ["copywriting"],
+        tags: ["seo", "copywriting"],
         title: "No spelling errors found.",
         desc: "Spelling errors should typically be fixed before publishing a website."
       });
@@ -554,7 +554,7 @@ function displayResults(message){
       appendResults("fail", results = {
         tags: ["accessibility", "copywriting"],
         title: "Remove empty headings.",
-        desc: "Headings provide information about page structure for visually-impaired users who use a <a href='https://www.youtube.com/watch?v=q_ATY9gimOM' target='_blank'>screen reader</a>, so it is important that headings are accurate and concise. An empty heading does not give the user any information about the content that follows. Appropriate headings can also help search engines more easily understand a website’s content." + formatGuide("https://support.squarespace.com/hc/en-us/articles/215129127#toc-headings") + "The following headings are empty:<ul>" + emptyHeadings + "</ul>"
+        desc: "Headings provide information about page structure for visually-impaired users who use a <a href='https://www.youtube.com/watch?v=q_ATY9gimOM' target='_blank'>screen reader</a>, so it is important that headings are accurate and concise. An empty heading does not give the user any information about the content that follows. Appropriate headings can also help search engines more easily understand a website’s content. If using empty headings for spacing, instead use spacer blocks or empty paragraph text." + formatGuide("https://support.squarespace.com/hc/en-us/articles/215129127#toc-headings") + "The following headings are empty:<ul>" + emptyHeadings + "</ul>"
       });
     }
     else{
@@ -689,7 +689,7 @@ function displayResults(message){
         appendResults("pass", results = {
           tags: ["legal", "commerce"],
           title: "Commerce checkout includes terms and policies.",
-          desc: "For ecommerce websites, policy links can be displayed on the checkout page." + formatGuide("https://support.squarespace.com/hc/en-us/articles/360002111987#toc-checkout-settings:~:text=Add%20and%20format%20these%20policies")
+          desc: "For ecommerce websites, policy links should be displayed on the checkout page." + formatGuide("https://support.squarespace.com/hc/en-us/articles/360002111987#toc-checkout-settings:~:text=Add%20and%20format%20these%20policies")
         });
       }
       else{
@@ -706,7 +706,7 @@ function displayResults(message){
         appendResults("fail", results = {
           tags: ["legal", "commerce"],
           title: "Add terms and policies to commerce checkout.",
-          desc: "For ecommerce websites, policy links can be displayed on the checkout page. The following are missing from this website's checkout:<ul>" + checkoutPolicies + "</ul>" + formatGuide("https://support.squarespace.com/hc/en-us/articles/360002111987#toc-checkout-settings:~:text=Add%20and%20format%20these%20policies")
+          desc: "For ecommerce websites, policy links should be displayed on the checkout page. The following are missing from this website's checkout:<ul>" + checkoutPolicies + "</ul>" + formatGuide("https://support.squarespace.com/hc/en-us/articles/360002111987#toc-checkout-settings:~:text=Add%20and%20format%20these%20policies")
         });
       }
     }
@@ -771,7 +771,7 @@ function appendResults(type, results){
   for(i=0; i<results.tags.length; i++)
   {
     if(results.tags[i] == "accessibility"){
-      tagsContent += "<li class='tooltip'>Accessibility<span class='tooltip-text'>Accessibiliy is the practice of making websites more usable for people with disabilities.</span></li>";
+      tagsContent += "<li class='tooltip'>Accessibility<span class='tooltip-text'>Accessibiliy is the practice of making websites more usable for everyone, and especially for people with disabilities.</span></li>";
     }
     else if(results.tags[i] == "seo"){
       tagsContent += "<li class='tooltip'>SEO<span class='tooltip-text'>Search Engine Optimization (SEO) is the practice of helping search engines better understand content with the goal of ranking higher for certain keywords.</span></li>";
@@ -810,13 +810,13 @@ function appendResults(type, results){
       tagsContent += "<li class='tooltip'>Commerce<span class='tooltip-text'>Commerce refers to websites with an online store used to sell products or services.</span></li>";
     }
     else if(results.tags[i] == "customcode"){
-      tagsContent += "<li class='tooltip'>Custom Code<span class='tooltip-text'>Custom Code refers to CSS or Javascript injected into a website to customize elements beyond its native template options.</span></li>";
+      tagsContent += "<li class='tooltip'>Custom Code<span class='tooltip-text'>Custom Code refers to CSS or Javascript injected into a website to customize elements beyond native template options.</span></li>";
     }
     else if(results.tags[i] == "domain"){
       tagsContent += "<li class='tooltip'>Domain<span class='tooltip-text'>Domain refers to the unique address used to identify a website.</span></li>";
     }
     else if(results.tags[i] == "settings"){
-      tagsContent += "<li class='tooltip'>Settings<span class='tooltip-text'>Settings refers to easily toggleable options used to configure a website.</span></li>";
+      tagsContent += "<li class='tooltip'>Settings<span class='tooltip-text'>Settings are easily toggleable options used to configure a website.</span></li>";
     }
   }
 
