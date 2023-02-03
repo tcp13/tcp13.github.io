@@ -342,14 +342,14 @@ function displayResults(message){
         appendResults("pass", results = {
           tags: ["security", "domain", "settings"],
           title: "Site uses HTTPS.",
-          desc: "Lorem ipsum dolor sit amet. This is placeholder text that will explain more details."
+          desc: "HTTPS is a more secure protocol for accessing a website. Using HTTPS requires the website to have an SSL certificate, which is automatically provided by Squarespace for websites with a properly configured domain." + formatGuide("https://support.squarespace.com/hc/en-us/articles/205815898")
         });
       }
       else if(message.content.https == false){
         appendResults("fail", results = {
           tags: ["security", "domain", "settings"],
           title: "Enable HTTPS.",
-          desc: "Lorem ipsum dolor sit amet. This is placeholder text that will explain the suggestion and link to an official Squarespace Help Center guide for more details."
+          desc: "HTTPS is a more secure protocol for accessing a website. Using HTTPS requires the website to have an SSL certificate, which is automatically provided by Squarespace for websites with a properly configured domain. HTTPS can be enabled for this website from Settings ➜ Advanced ➜ SSL." + formatGuide("https://support.squarespace.com/hc/en-us/articles/205815898")
         });
       }
     }
@@ -378,14 +378,14 @@ function displayResults(message){
         appendResults("pass", results = {
           tags: ["privacy", "legal", "settings"],
           title: "Cookie notice is enabled.",
-          desc: "Lorem ipsum dolor sit amet. This is placeholder text that will explain more details."
+          desc: "Squarespace websites use cookies to store information about visitors and track their activity. A cookie notice allows users to restrict or consent to the use of cookies. Cookie settings can be toggled for this website from Settings ➜ Cookies & Visitor Data." + formatGuide("https://support.squarespace.com/hc/en-us/articles/206545727-Adding-a-cookie-banner")
         });
       }
       else if(message.content.cookieNotice == false){
         appendResults("fail", results = {
           tags: ["privacy", "legal", "settings"],
           title: "Enable cookie notice.",
-          desc: "Lorem ipsum dolor sit amet. This is placeholder text that will explain the suggestion and link to an official Squarespace Help Center guide for more details."
+          desc: "Squarespace websites use cookies to store information about visitors and track their activity. A cookie notice allows users to restrict or consent to the use of cookies." + formatGuide("https://support.squarespace.com/hc/en-us/articles/206545727-Adding-a-cookie-banner")
         });
       }
     }
@@ -396,14 +396,14 @@ function displayResults(message){
         appendResults("pass", results = {
           tags: ["privacy", "settings"],
           title: "Analytics cookies are deactivated.",
-          desc: "Lorem ipsum dolor sit amet. This is placeholder text that will explain more details."
+          desc: "Squarespace websites use cookies to store information about visitors and track their activity. Consider whether this site actually needs to collect analytics data, and if appropriate, deactivate analytics cookies. Cookie settings can be toggled for this website from Settings ➜ Cookies & Visitor Data." + formatGuide("https://support.squarespace.com/hc/en-us/articles/360001264507#toc-disable-analytics-and-performance-cookies")
         });
       }
       else if(message.content.analyticsCookies == true){
         appendResults("fail", results = {
           tags: ["privacy", "settings"],
           title: "Deactivate analytics cookies.",
-          desc: "Lorem ipsum dolor sit amet. This is placeholder text that will explain the suggestion and link to an official Squarespace Help Center guide for more details."
+          desc: "Squarespace websites use cookies to store information about visitors and track their activity. Consider whether this site actually needs to collect analytics data, and if appropriate, deactivate analytics cookies." + formatGuide("https://support.squarespace.com/hc/en-us/articles/360001264507#toc-disable-analytics-and-performance-cookies")
         });
       }
     }
@@ -414,14 +414,14 @@ function displayResults(message){
         appendResults("pass", results = {
           tags: ["brand", "copywriting", "settings"],
           title: "Custom 404 page is active.",
-          desc: "Lorem ipsum dolor sit amet. This is placeholder text that will explain more details."
+          desc: "A 404 page is shown by a website when the requested page cannot be found. For example, following a link to a page that has recently been deleted would instead display the 404 page. Most site owners like to customize their 404 page to include a silly message or help direct visitors in the right direction. 404 page settings can be toggled for this website from Design ➜ 404 Page." + formatGuide("https://support.squarespace.com/hc/en-us/articles/205814478")
         });
       }
       else if(message.content.custom404 == false){
         appendResults("fail", results = {
           tags: ["brand", "copywriting", "settings"],
           title: "Set a custom 404 page.",
-          desc: "Lorem ipsum dolor sit amet. This is placeholder text that will explain the suggestion and link to an official Squarespace Help Center guide for more details."
+          desc: "A 404 page is shown by a website when the requested page cannot be found. For example, following a link to a page that has recently been deleted would instead display the 404 page. Most site owners like to customize their 404 page to include a silly message or help direct visitors in the right direction." + formatGuide("https://support.squarespace.com/hc/en-us/articles/205814478")
         });
       }
     }
@@ -444,7 +444,7 @@ function displayResults(message){
       appendResults("pass", results = {
         tags: ["seo", "copywriting"],
         title: "No placeholder text found.",
-        desc: "Lorem ipsum dolor sit amet. This is placeholder text that will explain more details."
+        desc: 'Placeholder text such as "Lorem Ipsum" or "Make it stand out" should typically be replaced before publishing a website.'
       });
     }
 
@@ -465,7 +465,7 @@ function displayResults(message){
       appendResults("pass", results = {
         tags: ["copywriting"],
         title: "No spelling errors found.",
-        desc: "Lorem ipsum dolor sit amet. This is placeholder text that will explain more details."
+        desc: "Spelling errors should typically be fixed before publishing a website."
       });
     }
 
@@ -482,14 +482,14 @@ function displayResults(message){
       appendResults("fail", results = {
         tags: ["accessibility", "links"],
         title: "Update ambiguous link text.",
-        desc: "The following links have ambiguous text:<ul>" + ambiguousLinkText + "</ul>"
+        desc: "Link text provides context for visually-impaired users who use a <a href='https://www.youtube.com/watch?v=q_ATY9gimOM' target='_blank'>screen reader</a>, so it is important to provide an accurate and concise description of where the link goes. Generic link text, such as \"click here\" or \"read more,\" does not give the user enough information about the link's destination. Appropriate link text can also help search engines more easily understand a website’s content." + formatGuide("https://support.squarespace.com/hc/en-us/articles/215129127#toc-links") + "The following links have ambiguous text:<ul>" + ambiguousLinkText + "</ul>"
       });
     }
     else{
       appendResults("pass", results = {
         tags: ["accessibility", "links"],
         title: "No ambiguous link text found.",
-        desc: "Lorem ipsum dolor sit amet. This is placeholder text that will explain more details."
+        desc: "Link text provides context for visually-impaired users who use a <a href='https://www.youtube.com/watch?v=q_ATY9gimOM' target='_blank'>screen reader</a>, so it is important to provide an accurate and concise description of where the link goes. Generic link text, such as \"click here\" or \"read more,\" does not give the user enough information about the link's destination. Appropriate link text can also help search engines more easily understand a website’s content." + formatGuide("https://support.squarespace.com/hc/en-us/articles/215129127#toc-links")
       });
     }
 
@@ -506,14 +506,14 @@ function displayResults(message){
       appendResults("fail", results = {
         tags: ["accessibility", "links"],
         title: "Remove empty links.",
-        desc: "The following links are empty:<ul>" + emptyLinks + "</ul>"
+        desc: "Link text provides context for visually-impaired users who use a <a href='https://www.youtube.com/watch?v=q_ATY9gimOM' target='_blank'>screen reader</a>, so it is important to provide an accurate and concise description of where the link goes. An empty link does not give the user any information about its destination. Appropriate link text can also help search engines more easily understand a website’s content." + formatGuide("https://support.squarespace.com/hc/en-us/articles/215129127#toc-links") + "The following links are empty:<ul>" + emptyLinks + "</ul>"
       });
     }
     else{
       appendResults("pass", results = {
         tags: ["accessibility", "links"],
         title: "No empty links found.",
-        desc: "Lorem ipsum dolor sit amet. This is placeholder text that will explain more details."
+        desc: "Link text provides context for visually-impaired users who use a <a href='https://www.youtube.com/watch?v=q_ATY9gimOM' target='_blank'>screen reader</a>, so it is important to provide an accurate and concise description of where the link goes. An empty link does not give the user any information about its destination. Appropriate link text can also help search engines more easily understand a website’s content." + formatGuide("https://support.squarespace.com/hc/en-us/articles/215129127#toc-links")
       });
     }
 
@@ -530,14 +530,14 @@ function displayResults(message){
       appendResults("fail", results = {
         tags: ["links"],
         title: "Set external links to open in a new window.",
-        desc: "The following external links are not set to open in a new window:<ul>" + sameWindow + "</ul>"
+        desc: "External links to other websites should typically be configured to open in a new window. This helps to preserve the user's context and prevent them from losing their place on the original website." + formatGuide("https://support.squarespace.com/hc/en-us/articles/206232858#toc-link-to-external-sites") + "The following external links are not set to open in a new window:<ul>" + sameWindow + "</ul>"
       });
     }
     else{
       appendResults("pass", results = {
         tags: ["links"],
         title: "External links are set to open in a new window.",
-        desc: "Lorem ipsum dolor sit amet. This is placeholder text that will explain more details."
+        desc: "External links to other websites should typically be configured to open in a new window. This helps to preserve the user's context and prevent them from losing their place on the original website." + formatGuide("https://support.squarespace.com/hc/en-us/articles/206232858#toc-link-to-external-sites")
       });
     }
 
@@ -554,14 +554,14 @@ function displayResults(message){
       appendResults("fail", results = {
         tags: ["accessibility", "copywriting"],
         title: "Remove empty headings.",
-        desc: "The following headings are empty:<ul>" + emptyHeadings + "</ul>"
+        desc: "Headings provide information about page structure for visually-impaired users who use a <a href='https://www.youtube.com/watch?v=q_ATY9gimOM' target='_blank'>screen reader</a>, so it is important that headings are accurate and concise. An empty heading does not give the user any information about the content that follows. Appropriate headings can also help search engines more easily understand a website’s content." + formatGuide("https://support.squarespace.com/hc/en-us/articles/215129127#toc-headings") + "The following headings are empty:<ul>" + emptyHeadings + "</ul>"
       });
     }
     else{
       appendResults("pass", results = {
         tags: ["accessibility", "copywriting"],
         title: "No empty headings found.",
-        desc: "Lorem ipsum dolor sit amet. This is placeholder text that will explain more details."
+        desc: "Headings provide information about page structure for visually-impaired users who use a <a href='https://www.youtube.com/watch?v=q_ATY9gimOM' target='_blank'>screen reader</a>, so it is important that headings are accurate and concise. An empty heading does not give the user any information about the content that follows. Appropriate headings can also help search engines more easily understand a website’s content." + formatGuide("https://support.squarespace.com/hc/en-us/articles/215129127#toc-headings")
       });
     }
 
@@ -626,14 +626,14 @@ function displayResults(message){
       appendResults("fail", results = {
         tags: ["speed", "images"],
         title: "Store fewer images in galleries.",
-        desc: "The following image galleries contain more than 50 images (which Squarespace recommends as the maximum):<ul>" + largeGalleries + "</ul>"
+        desc: "Squarespace recommends limiting galleries to no more than 50 images. Large galleries can decrease performance by taking longer to load page content." + formatGuide("https://support.squarespace.com/hc/en-us/articles/360022529371#toc-don-t-overload-galleries") + "The following image galleries contain more than 50 images:<ul>" + largeGalleries + "</ul>"
       });
     }
     else{
       appendResults("pass", results = {
         tags: ["speed", "images"],
         title: "No oversized images galleries found.",
-        desc: "Lorem ipsum dolor sit amet. This is placeholder text that will explain more details."
+        desc: "Squarespace recommends limiting galleries to no more than 50 images. Large galleries can decrease performance by taking longer to load page content." + formatGuide("https://support.squarespace.com/hc/en-us/articles/360022529371#toc-don-t-overload-galleries")
       });
     }
 
@@ -650,14 +650,14 @@ function displayResults(message){
       appendResults("fail", results = {
         tags: ["userinput"],
         title: "Set storage options for forms.",
-        desc: "The following forms are missing storage settings:<ul>" + brokenForms + "</ul>"
+        desc: "Squarespace forms are required to have a storage option. Forms that have not been properly configured will not be shown on the live site. Storage options can be set within the form block’s Storage tab." + formatGuide("https://support.squarespace.com/hc/en-us/articles/205814638-Managing-form-and-newsletter-storage") + "The following forms are missing storage settings:<ul>" + brokenForms + "</ul>"
       });
     }
     else{
       appendResults("pass", results = {
         tags: ["userinput"],
         title: "No broken forms found.",
-        desc: "Lorem ipsum dolor sit amet. This is placeholder text that will explain more details."
+        desc: "Squarespace forms are required to have a storage option. Forms that have not been properly configured will not be shown on the live site. Storage options can be set within the form block’s Storage tab." + formatGuide("https://support.squarespace.com/hc/en-us/articles/205814638-Managing-form-and-newsletter-storage")
       });
     }
     
@@ -665,7 +665,8 @@ function displayResults(message){
     if(message.content.outdatedLibraries[0] != null){
       let outdatedLibraries = "";
       for(i=0; i<message.content.outdatedLibraries.length; i++){
-        outdatedLibraries += "<p><strong>" + message.content.outdatedLibraries[i].name + " is out of date!</strong></p>";
+        outdatedLibraries += "Keeping libraries updated can fix known security vulnerabilities and improve performance by optimizing the efficiency of custom code.</p>"
+        outdatedLibraries += "<p><strong>" + message.content.outdatedLibraries[i].name + " is out of date!</strong>";
         outdatedLibraries += "<ul class='code-list'><li>Version " + message.content.outdatedLibraries[i].version + " is currently installed. It looks something like this within the site's custom code: <code>&lt;script src='" + message.content.outdatedLibraries[i].link + "'&gt;&lt;/script&gt;</code>.</li><li>Consider replacing it with <a href='" + message.content.outdatedLibraries[i].current + "' target='_blank'>the current version of " + message.content.outdatedLibraries[i].name + " found here</a>. Use caution, as upgrading can cause unexpected issues with plugins that may use deprecated features from the outdated version.</li></ul>";
       }
       appendResults("fail", results = {
@@ -678,7 +679,7 @@ function displayResults(message){
       appendResults("pass", results = {
         tags: ["security", "customcode"],
         title: "No outdated libraries found.",
-        desc: "Lorem ipsum dolor sit amet. This is placeholder text that will explain more details."
+        desc: "Keeping libraries updated can fix known security vulnerabilities and improve performance by optimizing the efficiency of custom code."
       });
     }
 
