@@ -450,6 +450,7 @@ function displayResults(message){
     }
 
     // spellcheck
+    /*
     if(message.content.spellcheck[0] != null){
       let spellErrors = "";
       for(i=0; i<message.content.spellcheck.length; i++){
@@ -468,7 +469,7 @@ function displayResults(message){
         title: "No spelling errors found.",
         desc: "Spelling errors should typically be fixed before publishing a website."
       });
-    }
+    }*/
 
     // ambiguous link text
     if(message.content.ambiguousLinkText[0] != null){
