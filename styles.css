@@ -24,6 +24,7 @@ h2 {font-size: 1.4rem;}
 a{
     color:var(--white);
     text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
 }
 a:hover {opacity: 0.8;}
 p {
