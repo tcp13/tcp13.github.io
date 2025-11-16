@@ -103,9 +103,8 @@ main{
 }
 #newsletter-form{
     margin-left: calc(20% - 5rem);
-    padding: 4rem 5rem;
+    padding: 0px 4rem 5rem 4rem;
     max-width: 60%;
-    margin-top:5rem;
 }
 #newsletter button{
     color: var(--black);
@@ -114,6 +113,9 @@ main{
     font-size: 1.25rem;
     font-weight: 700;
     padding: 0.5rem 0.75rem;
+}
+.cf-turnstile{
+    margin-top: 1.5rem;
 }
 @media only screen and (max-width: 800px) {
     #newsletter-form{
